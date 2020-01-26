@@ -1,0 +1,55 @@
+#clarification, #thanks
+  display: none
+
+.overlay
+  display: none
+  position: fixed
+  width: 100vw
+  height: 100vh
+  top: 0
+  background-color: rgba(0, 0, 0, 0.56)
+
+.modal
+  position: absolute
+  background-color: #e5ffed
+  border: 2px slategrey solid
+  width: 320px
+  min-height: 300px
+  text-align: center
+  top: 42%
+  left: 50%
+  transform: translate(-50%, -50%)
+
+  &_thanks
+    width: 280px
+    min-height: 100px
+
+  &__close
+    width: 35px
+    height: 35px
+    position: absolute
+    top: -30px
+    right: -30px
+    transform: rotate(90deg) scale(3)
+    color: #8ea3b4
+    cursor: pointer
+
+  &__subtitle
+    margin-top: 15px
+    font-weight: 500
+    font-size: 22px
+    text-transform: uppercase
+
+  &__description
+    font-weight: 400
+    font-size: 18px
+
+  &__form
+    @include flex-column
+
+  &__inp
+    margin: 6px 36px
+
+    &:first-of-type
+      margin-top: 12px
+

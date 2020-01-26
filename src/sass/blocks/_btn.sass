@@ -3,16 +3,21 @@
   height: 46px
   box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.12)
   border: none
-  background-image: linear-gradient(to top, #1eacc7 0%, #4ce2ff 100%)
+  background-image: linear-gradient(to top, $bluecolor 0%, #4ce2ff 100%)
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.21)
-  color: #ffffff
+  color: $whitecolor
   font-size: 14px
   font-weight: 400
   text-transform: uppercase
   border-radius: 4px
+  @include btn_hover
 
   &_big
     margin-top: 118px
     width: 259px
     height: 63px
     font-size: 18px
+
+  &_special
+    margin: 25px auto 0
+    background-image: linear-gradient(to top, slategrey 0%, #2f91ff 100%)
