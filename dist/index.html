@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/style.min.css">
     <title>UberPartners</title></head>
 <body><!--HEADER-->
-<header class="header">
+<header class="header" id="up">
     <nav class="nav">
         <div class="container_fluid">
             <ul class="horizontal-menu">
@@ -252,16 +252,18 @@
         <div class="footer__right"><img src="img/icons/apps.png" alt="available online stores" class="footer__stores">
         </div>
     </div>
-    <div class="footer__under"></div>
+    <a href="#up"><img src="img/icons/pageUp.png" alt="page up" class="pageUp"></a>
+    <div class="footer__under"><a target="_blank" href="https://icons8.ru/icons/set/circled-up--v1">Стрелка вверх в
+        круге icon</a> icon by <a target="_blank" href="https://icons8.ru">Icons8</a></div>
 </footer>
 <div class="overlay">
     <div class="modal" id="clarification">
         <div class="modal__close">&times;</div>
         <div class="modal__subtitle">And last step...</div>
         <div class="modal__description">for clarification</div>
-        <form action="#" class="modal__form"><input class="modal__inp" type="text" required placeholder="Your name"
-                                                    name="name"> <input class="modal__inp" type="number" required
-                                                                        placeholder="Your phone" name="phone"> <input
+        <form action="#" class="modal__form" name="form"><input class="modal__inp" type="text" required
+                                                                placeholder="Your name" name="name"> <input
+                class="modal__inp" type="number" required placeholder="Your phone" name="phone"> <input
                 class="modal__inp" type="email" required placeholder="Your email" name="email">
             <button class="btn btn_special">отправить</button>
         </form>
@@ -272,5 +274,6 @@
         <div class="modal__description">We will call you soon</div>
     </div>
 </div>
+<script src="js/script.js"></script>
 </body>
 </html>
