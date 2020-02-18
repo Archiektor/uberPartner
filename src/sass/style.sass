@@ -11,18 +11,25 @@
   max-width: 950px
   width: 100%
   margin: 0 auto
+  @include for-tablet-portrait-up
+    max-width: 700px
 
 .container_fluid
   position: relative
   max-width: 1140px
   width: 100%
   margin: 0 auto
-
+  @include for-tablet-portrait-up
+    max-width: 720px
 
 body
   display: grid
   grid-template-rows: repeat(6, 1fr)
   grid-gap: 2vw
+  @include for-tablet-portrait-up
+    grid-gap: 0
+  @include for-phone-only
+    grid-template-rows: auto
 
 @import "blocks/header"
 @import "blocks/hmenu"

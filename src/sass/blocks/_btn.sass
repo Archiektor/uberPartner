@@ -11,12 +11,22 @@
   text-transform: uppercase
   border-radius: 4px
   @include btn_hover
+  @include for-phone-only
+    width: 120px
+    font-size: 11px
+    height: 26px
 
   &_big
     margin-top: 118px
     width: 259px
     height: 63px
     font-size: 18px
+    @include for-tablet-portrait-up
+      width: 220px
+      height: 54px
+    @include for-phone-only
+      margin-top: 74px
+
 
   &_special
     margin: 25px auto 0

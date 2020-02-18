@@ -1,11 +1,27 @@
 .reasons
   background-color: $whitecolor
+  @include for-phone-only
+    width: 96vw
+    border: 2px darkgreen solid
+
 
   &__container
     display: grid
     grid-template-columns: 1fr 1fr
     justify-content: space-between
     grid-template-rows: repeat(4, 1fr)
-    //border: 2px darkgreen solid
     grid-column-gap: 51px
     margin-top: 40px
+    @include for-tablet-landscape-up
+      grid-column-gap: 21px
+      //border: 2px darkgreen solid
+      margin: 40px 10px 0 10px
+    @include for-tablet-portrait-up
+      margin-top: 25px
+    @include for-phone-only
+      margin-top: 20px
+      display: flex
+      flex-flow: column nowrap
+      justify-content: center
+      align-items: center
+

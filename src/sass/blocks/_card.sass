@@ -1,6 +1,8 @@
 .card
   display: grid
   grid-template-columns: 0.6fr 2fr
+  @include for-tablet-portrait-up
+    grid-template-columns: 0.4fr 1.8fr
 
   &__bg
     position: relative
@@ -9,6 +11,11 @@
     background-color: $bluecolor
     border-radius: 100%
     margin: 10px auto 0
+    @include for-tablet-portrait-up
+      width: 90px
+      height: 90px
+    @include for-phone-only
+      margin-left: 10px
 
   &__img
     position: absolute
@@ -24,9 +31,15 @@
     font-size: 17px
     font-weight: 400
     margin-bottom: 4px
+    @include for-tablet-portrait-up
+      font-size: 14px
 
   &__text
     color: $greycolor
     font-size: 15px
     font-weight: 300
     line-height: 21px
+    @include for-tablet-portrait-up
+      font-size: 12px
+      line-height: 17px
+

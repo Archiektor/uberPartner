@@ -4,13 +4,22 @@
     grid-template-rows: repeat(2, 1fr)
     grid-template-columns: repeat(3, 1fr)
     margin-top: 32px
-    justify-content: space-between
+    justify-content: space-around
     grid-row-gap: 19px
+    @include for-tablet-landscape-up
+      //border: 2px darkgreen solid
+      grid-row-gap: 15px
+      margin-left: 13px
+    @include for-tablet-portrait-up
+      grid-column-gap: 15px
+      margin-top: 0
 
   &__card
     width: 320px
     min-height: 280px
     text-align: center
+    @include for-tablet-portrait-up
+      width: 280px
 
     &_1
       background: url('../../img/pics/mobile_first.jpg') center center/ cover no-repeat

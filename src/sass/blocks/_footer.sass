@@ -26,30 +26,41 @@
     justify-self: center
     grid-template-rows: 40px 20px 15px 40px
     width: 440px
+    @include for-tablet-portrait-up
+      width: 400px
 
   &__horizontal
     margin: 0 auto
     width: 299px
     height: 4px
     background-color: #1fbad6
+    @include for-tablet-portrait-up
+      height: 3px
+      margin-top: 27px
 
   &__3th
     margin-top: -8px
     display: flex
     flex-flow: row nowrap
     justify-content: space-around
+    @include for-tablet-portrait-up
+      margin-top: 4px
 
   &__title
     color: #070716
     font-size: 17px
     font-weight: 600
     text-transform: uppercase
+    @include for-tablet-portrait-up
+      font-size: 15px
 
   &__5th
     margin-top: -4px
     display: flex
     flex-flow: row nowrap
     justify-content: space-between
+    @include for-tablet-portrait-up
+      display: none
 
 
   &__subtitle
@@ -71,8 +82,12 @@
     align-items: center
     justify-content: flex-end
 
+
   &__stores
     margin-right: 23px
+    @include for-tablet-landscape-up
+      width: 90%
+
 
   &__under
     width: 100%

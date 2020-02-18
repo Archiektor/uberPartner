@@ -3,6 +3,8 @@
     const divOverlay = document.querySelector('.overlay');
     const modalClarif = document.querySelector('#clarification');
     const modalThanks = document.querySelector('#thanks');
+    const burger = document.querySelector('.burger');
+    const menuItem = document.querySelectorAll('.horizontal-menu__item');
 
     //Events
     const askBtn = document.querySelectorAll('.btn')[0];
@@ -10,9 +12,6 @@
 
     const pushBtn = document.querySelectorAll('.btn')[1];
     pushBtn.addEventListener('click', onPushHandler);
-
-    // const sendBtn = document.querySelectorAll('.btn_special');
-    // sendBtn.addEventListener('click', onSendHadler);
 
     modalClarif.addEventListener('click', e => {
         e.preventDefault();
@@ -57,7 +56,7 @@
         modalThanks.style.display = 'initial';
 
         setTimeout(function () {
-            modalThanks.style.display = 'none';
+            fadeIn(modalThanks);
             divOverlay.style.display = 'none';
         }, 2200);
 
@@ -68,20 +67,37 @@
     document.addEventListener("scroll", e => {
         const pageUp = document.querySelector('.pageUp');
 
-        // console.log('Current scroll from the top: ' + window.pageYOffset);
         if (window.pageYOffset < 1600) {
-            pageUp.style.transition = "opacity 1s";
-            pageUp.style.opacity = "0";
-            // pageUp.style.display = 'none';
+            fadeIn(pageUp);
 
         } else {
-            pageUp.style.display = 'inline-block';
-            // pageUp.style.transform = "rotate(15deg)";
-            pageUp.style.opacity = 1;
-            pageUp.style.transition = "opacity 2s";
-
-
+            fadeOut(pageUp);
         }
+    });
+
+    function fadeIn(element) {
+        element.style.transition = "opacity 3s";
+        element.style.opacity = "0";
+    }
+
+    function fadeOut(element) {
+        element.style.opacity = 1;
+        element.style.transition = "opacity 2s";
+        element.style.display = 'inline-block';
+    }
+
+    //Burger
+
+    burger.addEventListener('click', e => {
+        const hMenu = document.querySelector('.horizontal-menu');
+        hMenu.classList.toggle('horizontal-menu_active');
+        burger.classList.toggle('burger_active');
+
+        menuItem.forEach(item => {
+            item.addEventListener('click', e => {
+                location.replace("https://www.cloudmist.ru/");
+            })
+        })
     });
 
 })();

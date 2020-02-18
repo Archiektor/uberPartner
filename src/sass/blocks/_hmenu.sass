@@ -2,11 +2,34 @@
   @include flex-row
   justify-content: space-around
   padding: 10px 0
+  @include for-tablet-portrait-up
+    padding: 10px 0 0 0
+    margin: 0
+  @include for-phone-only
+    position: fixed
+    @include flex-column
+    top: 0
+    left: -100%
+    width: 50%
+    height: 75vh
+    padding: 2px 15px
+    background-color: rgba(0, 0, 0, .8)
+    transition: 1.5s all
+
+  &_active
+    left: 0
 
   &__item
     list-style-type: none
     border-right: 2px dotted black
     padding-right: 44px
+    @include for-tablet-landscape-up
+      padding-right: 22px
+    @include for-tablet-portrait-up
+      padding-right: 9px
+    @include for-phone-only
+      border: none
+
 
     &:last-child
       border-right: none
@@ -16,3 +39,8 @@
       font-size: 15px
       font-weight: 300
       text-decoration: none
+      @include for-tablet-portrait-up
+        font-size: 14px
+      @include for-phone-only
+        font-size: 15px
+

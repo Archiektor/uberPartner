@@ -5,14 +5,29 @@
   height: 84px
   background-color: rgba(0, 0, 0, 0.6)
   border: none
+  @include for-tablet-portrait-up
+    top: 36px
+  @include for-phone-only
+    top: 28px
 
   &__content
     display: grid
     grid-template-columns: 3.5fr 3.5fr 4fr
     height: 84px
+    @include for-tablet-portrait-up
+      grid-template-columns: 4fr 2fr 4fr
+    @include for-phone-only
+      width: 100vw
+      grid-template-columns: 2fr 0.4fr 2fr
+
 
   &__left
     height: inherit
+    @include for-tablet-portrait-up
+      padding-left: 20px
+    @include for-phone-only
+      //padding-left: 10px
+  //border: 2px red solid
 
   &__text
     display: inline-block
@@ -22,6 +37,9 @@
     text-transform: uppercase
     padding-top: 12px
     font-family: "Nokia Sans S60", sans-serif
+    @include for-phone-only
+      font-size: 15px
+      padding-top: 30px
 
     &:hover
       color: $whitecolor
@@ -31,19 +49,30 @@
     max-width: 100%
     padding-top: -10px
     margin-right: 9px
+    @include for-phone-only
+      width: 15px
+      height: 15px
 
   &__caption
     opacity: 0.5
     color: $whitecolor
     font-size: 13px
     font-weight: 400
+    @include for-phone-only
+      display: none
 
   &__right
-    //border: 2px red solid
     display: grid
     grid-template-columns: 1fr 1fr
     height: inherit
-
+    @include for-tablet-portrait-up
+      grid-template-columns: none
+      grid-template-rows: 1fr 1fr
+      max-width: 300px
+    @include for-phone-only
+      grid-template-columns: none
+      grid-template-rows: 1fr 1fr
+      justify-content: center
 
   &__phoneMenu
     display: flex
@@ -51,6 +80,16 @@
     height: inherit
     position: relative
     padding-right: 8px
+    @include for-tablet-portrait-up
+      justify-content: flex-end
+      height: initial
+      padding-right: 20px
+    @include for-phone-only
+      display: block
+      height: auto
+      align-self: flex-end
+      margin: 6px auto 0
+
 
   &__callus
     color: $whitecolor
@@ -59,6 +98,10 @@
     position: absolute
     top: 20px
     margin-bottom: 0
+    @include for-tablet-portrait-up
+      display: none
+    @include for-phone-only
+      display: none
 
   &__phoneNu
     margin-top: 36px
@@ -66,6 +109,12 @@
     font-weight: 400
     text-transform: uppercase
     color: $whitecolor
+    @include for-tablet-portrait-up
+      margin-top: 4px
+      font-size: 18px
+    @include for-phone-only
+      font-size: 14px
+      margin-top: 6px
 
   &__pushBtn
     display: flex
@@ -73,3 +122,12 @@
     align-items: center
     height: inherit
     padding-right: 6px
+    @include for-tablet-portrait-up
+      margin-top: 6px
+      height: 20px
+      justify-content: flex-end
+      padding-right: 20px
+    @include for-phone-only
+      display: block
+      height: auto
+      padding-right: 25px

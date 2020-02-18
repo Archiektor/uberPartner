@@ -1,6 +1,8 @@
 .frametitle
   text-align: center
   padding-top: 70px
+  @include for-phone-only
+    padding-top: 25px
 
   &__frame
     width: 112px
@@ -23,6 +25,9 @@
     font-size: 38px
     font-weight: 700
     text-transform: uppercase
+    @include for-phone-only
+      font-size: 16px
+      margin-top: 24px
 
     &_white
       margin-top: 21px

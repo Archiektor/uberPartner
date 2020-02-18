@@ -1,23 +1,45 @@
 .mainheader
-  text-align: center
   color: $whitecolor
-
+  text-align: center
+  width: 93vw
+  padding: 0 10px
 
   &__title
     padding-top: 67px
     font-size: 60px
     font-weight: 700
     text-transform: uppercase
+    @include for-tablet-portrait-up
+      font-size: 50px
+      padding-top: 52px
+    @include for-phone-only
+      padding-top: 32px
+      font-size: 34px
+
 
   &__subtitle
     font-size: 36px
     font-weight: 400
     line-height: 24px
+    @include for-tablet-portrait-up
+      font-size: 30px
+      line-height: 20px
+    @include for-phone-only
+      font-size: 22px
+
 
   &__text
     font-size: 18px
     font-weight: 400
     line-height: 24px
+    @include for-tablet-portrait-up
+      font-size: 16px
+      line-height: 18px
+    @include for-phone-only
+      font-size: 13px
+      line-height: 11px
+      text-align: center
+
 
     &:first-of-type
       padding-top: 23px

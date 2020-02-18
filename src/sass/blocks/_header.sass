@@ -2,6 +2,8 @@
   position: relative
   background: url('../../img/pics/main_pic.jpg') center center/ cover no-repeat
   min-height: 799px
+  @include for-phone-only
+    max-height: 380px
 
   .nav
     position: fixed
@@ -9,3 +11,39 @@
     background-color: #212121
     width: 100%
     height: 42px
+    @include for-tablet-portrait-up
+      height: 36px
+    @include for-phone-only
+      height: 30px
+
+    .burger
+      display: none
+      @include for-phone-only
+        display: block
+        position: absolute
+        top: 10px
+        right: 10px
+        width: 35px
+
+      &_active
+        width: 17px
+        top: 16px
+        right: 15px
+
+        span
+          margin-bottom: -3px
+
+          &:first-child
+            transform: rotate(-45deg)
+
+          &:last-child
+            transform: rotate(45deg)
+
+          &:nth-child(2)
+            display: none
+
+    .line
+      display: block
+      background-color: white
+      height: 3px
+      margin-bottom: 3px
