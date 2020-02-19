@@ -1,12 +1,15 @@
 .choice
   position: relative
-  width: 100vw
+  @include for-phone-only
+    width: 100vw
 
   &__darkblue
     position: relative
     width: 100%
-    max-height: 400px
+    max-height: 499px
     background-color: #070716
+    @include for-phone-only
+      max-height: 400px
 
   &__container
     position: relative
@@ -15,7 +18,8 @@
     display: block
     margin: 0 auto
     margin-top: 36px
-    max-width: 270px
+    @include for-phone-only
+      max-width: 270px
 
   &__title
     position: absolute
@@ -50,10 +54,12 @@
 
   &__car
     position: absolute
-    top: -46px
+    top: -126px
     left: 50%
     transform: translateX(-50%)
-    max-width: 360px
+    @include for-phone-only
+      max-width: 360px
+      top: -46px
 
   &__advert
     color: $greycolor

@@ -1,8 +1,9 @@
 .mainheader
   color: $whitecolor
   text-align: center
-  width: 93vw
   padding: 0 10px
+  @include for-phone-only
+    width: 93vw
 
   &__title
     padding-top: 67px
