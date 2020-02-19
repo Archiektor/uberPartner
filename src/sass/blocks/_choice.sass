@@ -1,10 +1,11 @@
 .choice
   position: relative
+  width: 100vw
 
   &__darkblue
     position: relative
     width: 100%
-    height: 499px
+    max-height: 400px
     background-color: #070716
 
   &__container
@@ -14,6 +15,7 @@
     display: block
     margin: 0 auto
     margin-top: 36px
+    max-width: 270px
 
   &__title
     position: absolute
@@ -22,6 +24,9 @@
     transform: translateX(-50%)
     color: $whitecolor
     font-size: 42px
+    @include for-phone-only
+      top: 7px
+      font-size: 24px
 
   &__subtitle
     position: absolute
@@ -30,6 +35,9 @@
     color: #000000
     font-size: 16px
     transform: translateX(-50%)
+    @include for-phone-only
+      top: 41px
+      font-size: 14px
 
   &__white
     position: relative
@@ -37,16 +45,22 @@
     height: 397px
     background-color: $whitecolor
     text-align: center
+    @include for-phone-only
+      background-color: #070716
 
   &__car
     position: absolute
-    top: -120px
+    top: -46px
     left: 50%
     transform: translateX(-50%)
+    max-width: 360px
 
   &__advert
     color: $greycolor
     font-size: 17px
     font-weight: 300
     padding-top: 217px
+    @include for-phone-only
+      color: $whitecolor
+      padding-top: 115px
 

@@ -1,15 +1,29 @@
 .footer
   max-height: 320px
+  width: 100vw
 
   &__container
-    margin-top: -22px
+    margin: -22px 0 0 0
     display: grid
-    grid-template-columns: 1fr 2fr 1fr
-    align-items: center
+    grid-template-areas: 'left mid mid right'
+    justify-content: center
+    @include for-phone-only
+      grid-template-areas: "mid" "left" "right"
+      grid-template-rows: auto
+      grid-template-columns: auto
+      justify-content: center
+      align-items: center
+      margin-top: 0
+
 
   &__left
+    grid-area: left
     @include flex-row
     padding-left: 23px
+    @include for-phone-only
+      padding-left: 0
+      margin: 20px auto
+      justify-self: center
 
   &__icons
     display: flex
@@ -23,11 +37,17 @@
 
   &__mid
     display: grid
+    grid-area: mid
     justify-self: center
     grid-template-rows: 40px 20px 15px 40px
     width: 440px
     @include for-tablet-portrait-up
       width: 400px
+      margin-bottom: 22px
+    @include for-phone-only
+      display: flex
+      flex-flow: column nowrap
+      width: 80vw
 
   &__horizontal
     margin: 0 auto
@@ -37,6 +57,9 @@
     @include for-tablet-portrait-up
       height: 3px
       margin-top: 27px
+    @include for-phone-only
+      margin-top: 15px
+
 
   &__3th
     margin-top: -8px
@@ -45,6 +68,9 @@
     justify-content: space-around
     @include for-tablet-portrait-up
       margin-top: 4px
+    @include for-phone-only
+      margin-top: 18px
+      justify-content: space-between
 
   &__title
     color: #070716
@@ -52,22 +78,40 @@
     font-weight: 600
     text-transform: uppercase
     @include for-tablet-portrait-up
-      font-size: 15px
+      font-size: 11px
 
   &__5th
+    color: #bcbab9
     margin-top: -4px
     display: flex
     flex-flow: row nowrap
     justify-content: space-between
     @include for-tablet-portrait-up
       display: none
-
+    @include for-phone-only
+      display: flex
+      flex-flow: column nowrap
+      justify-content: center
+      margin-top: 12px
+      &_up
+        @include for-phone-only
+          display: flex
+          flex-flow: row nowrap
+          justify-content: space-around
+      &_down
+        @include for-phone-only
+          display: flex
+          flex-flow: row nowrap
+          justify-content: space-between
 
   &__subtitle
-    color: #999999
+    color: #bcbab9
     font-size: 13px
     font-weight: 300
     text-transform: uppercase
+    @include for-phone-only
+      padding: 2px 12px
+
 
   &__language
     text-align: center
@@ -79,8 +123,12 @@
 
   &__right
     display: flex
+    grid-area: right
     align-items: center
     justify-content: flex-end
+    @include for-phone-only
+      justify-self: center
+      margin-top: 11px
 
 
   &__stores
@@ -95,3 +143,5 @@
     background-color: #070716
     font-size: 8px
     color: black
+    @include for-phone-only
+      margin-top: 11px

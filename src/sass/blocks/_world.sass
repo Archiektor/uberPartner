@@ -2,6 +2,9 @@
   position: relative
   min-height: 717px
   background: url('../../img/pics/all_world.jpg') center center/ cover no-repeat
+  @include for-phone-only
+    width: 100vw
+    min-height: 347px
 
   &__text
     position: absolute
@@ -12,3 +15,5 @@
     font-size: 15px
     font-weight: 400
     text-transform: uppercase
+    @include for-phone-only
+      font-size: 13px

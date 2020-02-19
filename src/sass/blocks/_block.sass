@@ -3,11 +3,12 @@
   text-align: left
   @include for-tablet-landscape-up
     margin-left: 70px
-  //border: 2px darkred solid
 
   &__title
     font-size: 22px
     font-weight: 400
+    @include for-phone-only
+      padding-left: 18px
 
   &__text
     margin-top: -6px
@@ -17,6 +18,8 @@
     font-size: 17px
     font-weight: 300
     background: url('../../img/icons/check_blue.png') left center/ auto no-repeat
+    @include for-phone-only
+      font-size: 12px
 
     &_pink
       background: url('../../img/icons/check-red.png') left center/ auto no-repeat

@@ -1,4 +1,7 @@
 .mobile
+  @include for-phone-only
+    width: 96vw
+
   &__container
     display: grid
     grid-template-rows: repeat(2, 1fr)
@@ -13,6 +16,10 @@
     @include for-tablet-portrait-up
       grid-column-gap: 15px
       margin-top: 0
+    @include for-phone-only
+      grid-template-rows: repeat(6, 1fr)
+      grid-template-columns: none
+
 
   &__card
     width: 320px
@@ -20,6 +27,9 @@
     text-align: center
     @include for-tablet-portrait-up
       width: 280px
+    @include for-phone-only
+      width: 86vw
+
 
     &_1
       background: url('../../img/pics/mobile_first.jpg') center center/ cover no-repeat
